@@ -7,7 +7,7 @@ import com.example.mortgage.mortgageproject.repositories.PropertyRepository;
 
 @Service
 public class PropertyService {
-	
+
 	@Autowired
 	PropertyRepository propertyRepository;
 

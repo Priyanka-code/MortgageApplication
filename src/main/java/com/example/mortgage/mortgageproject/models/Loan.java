@@ -1,5 +1,6 @@
 package com.example.mortgage.mortgageproject.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,15 +10,20 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Loan")
 public class Loan {
-	
+
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
+	@Column(name = "loanno")
 	private Long loanNo;
+	@Column(name = "loanamount")
 	private int loanAmount;
+	@Column(name = "rateofint")
 	private int rateOfInt;
+	@Column(name = "tenure")
 	private int tenure;
+	@Column(name = "emi")
 	private int emi;
-	
+
 	public Long getLoanNo() {
 		return loanNo;
 	}
@@ -58,5 +64,5 @@ public class Loan {
 	}
 
 	public Loan() {}
-	
+
 }

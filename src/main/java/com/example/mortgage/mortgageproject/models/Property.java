@@ -1,5 +1,6 @@
 package com.example.mortgage.mortgageproject.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,15 +10,16 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Property")
 public class Property {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "propertyId")
 	private Long propertyId;
+	@Column(name = "type")
 	private String type;
-	private String address;
-	private String pincode;
+	@Column(name = "rate")
 	private int rate;
-	
+
 	public Long getPropertyId() {
 		return propertyId;
 	}
@@ -30,33 +32,20 @@ public class Property {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public String getPincode() {
-		return pincode;
-	}
-	public void setPincode(String pincode) {
-		this.pincode = pincode;
-	}
+
 	public int getRate() {
 		return rate;
 	}
 	public void setRate(int rate) {
 		this.rate = rate;
 	}
-	public Property(Long propertyId, String type, String address, String pincode, int rate) {
+	public Property(Long propertyId, String type,  int rate) {
 		super();
 		this.propertyId = propertyId;
 		this.type = type;
-		this.address = address;
-		this.pincode = pincode;
 		this.rate = rate;
 	}
-	
+
 	public Property() {}
 
 }
